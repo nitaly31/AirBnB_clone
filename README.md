@@ -1,5 +1,7 @@
 # 0x00. AirBnB clone - The console :house_with_garden:
 
+ ![HNBN](https://github.com/nitaly31/AirBnB_clone/blob/master/picture/HBNB-HolbertonAirbnb.png)
+
 ### 📝 Descripción
 ***
 __Airbnb__ is an online platform that connects people who have a home to offer, with people who need a place to stay temporarily.
@@ -10,7 +12,7 @@ This Phase of the project focuses on everything about Python:
 `Import`,` Exceptions`, `Class`, `Private attribute`, `Getter / Setter`, `Class method`, `Static method`, `Inheritance`, `Unittest`, `Read / Write file`, `args `and` kwargs`, `Serialization` / `Deserialization` and `JSON`.
 
 Phases of the AirBnB clone project:
-**1. The console**
+1. **The console**
 2. HTML
 3. MySQL
 4. Fabric
