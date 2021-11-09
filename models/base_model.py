@@ -29,12 +29,12 @@ class BaseModel:
                 elif key != "__class__":
                     setattr(self, key, value)
         else:
-        # Asigna id aleatorio
-        self.id = str(uuid.uuid4)
-        # Asigna fecha actual
-        self.created_at = datetime.now().isoformat()
-        # Actualiza la fecha de la ultima modificación
-        self.updated_at = self.created_at
+            # Asigna id aleatorio
+            self.id = str(uuid.uuid4)
+            # Asigna fecha actual
+            self.created_at = datetime.now().isoformat()
+            # Actualiza la fecha de la ultima modificación
+            self.updated_at = self.created_at
 
     def __str__(self):
         ''' devuelve el nombre de la clase, el ID y
