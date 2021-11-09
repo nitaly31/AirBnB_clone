@@ -4,17 +4,18 @@
 import uuid
 from datetime import datetime
 
+
 class BaseModel:
     """
     Clase base que define todos los
     atributos / métodos comunes para otras clases
     """
     def __init__(self):
-        #Asigna id aleatorio
+        # Asigna id aleatorio
         self.id = str(uuid.uuid4)
-        #Asigna fecha actual
+        # Asigna fecha actual
         self.created_at = datetime.now().isoformat()
-        #Actualiza la fecha de la ultima modificación
+        # Actualiza la fecha de la ultima modificación
         self.updated_at = self.created_at
 
     def __str__(self):
