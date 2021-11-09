@@ -42,7 +42,7 @@ class FileStorage:
         (solo si el archivo JSON (__file_path) existe; de ​​lo contrario,
         si el archivo no existe, no se debe generar ninguna excepción) '''
         file = FileStorage.__file_path
-        class_dic = {'BaseModel': BaseModel}
+        class_dic = {'BaseModel': BaseModel, 'User': User}
         try:
             # Se abre el archivo para lectura
             with open(file, "r", encoding="utf-8") as f:
