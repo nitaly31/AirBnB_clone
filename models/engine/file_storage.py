@@ -3,7 +3,13 @@
 deserializa un archivo JSON en instancias '''
 
 import json
-from models.basemodel import BaseModel
+from models.base_model import BaseModel
+from models.user import User
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
+from models.review import Review
+from models.state import State
 
 
 class FileStorage:
@@ -27,14 +33,14 @@ class FileStorage:
     def save(self):
         ''' Serializa __objects en el archivo JSON (ruta: __file_path) '''
         dic_obj = {}
-        # Recorro los valores ingresados
-        for key, value in self.__objects.items():
-            # Asigno el valor al dic_obj en su clave
-            dic_obj[key] = vlaue.to_dic()
         # Creo el archivo json donde se almacenara la información a serializar
-        with open(FileStorage.file_path, "w", encoding="utf-8") as f:
-            # Convierte los objetos de Python en objetos json apropiados para
-            # almacenarse en un archivo
+        with open(self.__file_path, "w", encoding="utf-8") as f:
+            # Recorro los valores ingresados
+            for key, value in self.__objects.items():
+                # Asigno el valor al dic_obj en su clave
+                dic_obj[key] = value.to_dict()
+                # Convierte los objetos de Python en objetos json apropiados para
+                # almacenarse en un archivo
             json.dump(dic_obj, f, indent="")
 
     def reload(self):
@@ -47,11 +53,12 @@ class FileStorage:
             # Se abre el archivo para lectura
             with open(file, "r", encoding="utf-8") as f:
                 # Se deserializa el archivo
-                json_dic = json.load(f)
+                #json_dic = json.load(f)
                 # Se recorre el contenido del archivo deserializado
-                for key, value in json_dic.items():
+                for key, value in (json.load(f)).items():
                     # Establece los nuevos valores del objeto
-                    self.new(class_dic[value['__class__']]('**value'))
+                    value = eval(value[__class__](**value))
+                    self.__objects[key] = value
         # Se genera cuando se solicita un archivo o directorio pero no existe
         except FileNotFoundError:
             pass
