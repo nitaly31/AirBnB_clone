@@ -41,20 +41,25 @@ class FileStorage:
                 dic_obj[key] = value.to_dict()
                 # Convierte los objetos de Python en objetos json apropiados para
                 # almacenarse en un archivo
-            json.dump(dic_obj, f, indent="")
+            json.dump(dic_obj, f)
 
     def reload(self):
-        ''' Deserializa el archivo JSON a __objects
+        ''' 
+        Deserializa el archivo JSON a __objects
         (solo si el archivo JSON (__file_path) existe; de ​​lo contrario,
-        si el archivo no existe, no se debe generar ninguna excepción) '''
-        file = FileStorage.__file_path
-        class_dic = {'BaseModel': BaseModel, 'User': User}
+        si el archivo no existe, no se debe generar ninguna excepción)
+        '''
+        class_dic = {"BaseModel": BaseModel, "User": User, "State": State,
+           "Place": Place, "City": City, "Amenity": Amenity, "Review": Review}
         try:
             # Se abre el archivo para lectura
-            with open(file, "r", encoding="utf-8") as f:
+            with open(self.__file_path, 'r', encoding='UTF-8') as f:
                 # Se deserializa el archivo
-                #json_dic = json.load(f)
-                # Se recorre el contenido del archivo deserializado
+                j_dic = json.load(f)
+            # Se recorre el contenido del archivo deserializado
+            for key in j_dic:
+                self.__objects[key] = class_dic[j_dic[key]["__class__"]](**j_dic[key])
+                
                 for key, value in (json.load(f)).items():
                     # Establece los nuevos valores del objeto
                     value = eval(value[__class__](**value))
