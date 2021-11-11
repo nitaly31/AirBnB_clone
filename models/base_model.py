@@ -56,7 +56,7 @@ class BaseModel:
         ''' devuelve un diccionario que contiene todas
         las claves / valores de __dict__ de la instancia '''
         dic = self.__dict__.copy()
-        dic["created_at"] = self.created_at
-        dic["updated_at"] = self.updated_at
+        dic["created_at"] = self.created_at.strftime("%Y-%m-%dT%H:%M:%S.%f")
+        dic["updated_at"] = self.updated_at.strftime("%Y-%m-%dT%H:%M:%S.%f")
         dic["__class__"] = self.__class__.__name__
         return dic
