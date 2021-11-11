@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 ''' Class BaseModel '''
 
-import uuid
+import models
 from datetime import datetime
-from models import storage
+import uuid
 
 
 class BaseModel:
@@ -33,31 +33,30 @@ class BaseModel:
             # Asigna id aleatorio
             self.id = str(uuid.uuid4)
             # Asigna fecha actual
-            self.created_at = datetime.now().isoformat()
+            self.created_at = datetime.now()
             # Actualiza la fecha de la ultima modificación
             self.updated_at = self.created_at
             # Si es una instancia nueva
             # no de una representación de diccionario
-            storage.new(self)
+            models.storage.new(self)
 
     def __str__(self):
         ''' devuelve el nombre de la clase, el ID y
         el diccionario de atributos '''
-        return ("[{}] ({}) {}"
-                .format(self.__class__.__name__, self.id, self.__dic__))
+        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
 
     def save(self):
         ''' actualiza el atributo de instancia pública
         updated_at con la fecha y hora actual '''
-        self.updated_at = datatime.now().isoformat()
+        self.updated_at = datetime.now()
         # llamar al método save(self) de storage
-        storage.save()
+        models.storage.save()
 
     def to_dict(self):
         ''' devuelve un diccionario que contiene todas
         las claves / valores de __dict__ de la instancia '''
         dic = self.__dict__.copy()
-        dic["created_at"] = self.created_at.isoformat()
-        dic["updated_at"] = self.updated_at.isoformat()
+        dic["created_at"] = self.created_at
+        dic["updated_at"] = self.updated_at
         dic["__class__"] = self.__class__.__name__
         return dic
