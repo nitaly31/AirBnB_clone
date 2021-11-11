@@ -33,7 +33,7 @@ class BaseModel:
             # Asigna id aleatorio
             self.id = str(uuid.uuid4)
             # Asigna fecha actual
-            self.created_at = datetime.now().isoformat()
+            self.created_at = datetime.now()
             # Actualiza la fecha de la ultima modificación
             self.updated_at = self.created_at
             # Si es una instancia nueva
@@ -56,7 +56,7 @@ class BaseModel:
         ''' devuelve un diccionario que contiene todas
         las claves / valores de __dict__ de la instancia '''
         dic = self.__dict__.copy()
-        dic["created_at"] = self.created_at.isoformat()
-        dic["updated_at"] = self.updated_at.isoformat()
+        dic["created_at"] = self.created_at
+        dic["updated_at"] = self.updated_at
         dic["__class__"] = self.__class__.__name__
         return dic
