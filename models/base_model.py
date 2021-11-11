@@ -3,6 +3,7 @@
 
 import uuid
 from datetime import datetime
+from models import storage
 
 
 class BaseModel:
@@ -35,6 +36,9 @@ class BaseModel:
             self.created_at = datetime.now().isoformat()
             # Actualiza la fecha de la ultima modificación
             self.updated_at = self.created_at
+            # Si es una instancia nueva
+            # no de una representación de diccionario
+            storage.new(self)
 
     def __str__(self):
         ''' devuelve el nombre de la clase, el ID y
@@ -46,6 +50,8 @@ class BaseModel:
         ''' actualiza el atributo de instancia pública
         updated_at con la fecha y hora actual '''
         self.updated_at = datatime.now().isoformat()
+        # llamar al método save(self) de storage
+        storage.save()
 
     def to_dict(self):
         ''' devuelve un diccionario que contiene todas
