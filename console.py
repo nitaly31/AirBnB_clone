@@ -35,7 +35,9 @@ class HBNBCommand(cmd.Cmd):
             instance.save()
         except:
             print("** class doesn't exist **")
-    
+    def do_show(self, arg):
+        """Prints an instance as a string based on the class and id"""    
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
+# 
