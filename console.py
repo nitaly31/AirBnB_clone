@@ -30,6 +30,9 @@ class HBNBCommand(cmd.Cmd):
             return
         try:
             string = line + "()"
+            instance = eval(string)
+            print(instance.id)
+            instance.save()
         except:
             print("** class doesn't exist **")
     
