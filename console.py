@@ -54,7 +54,7 @@ class HBNBCommand(cmd.Cmd):
             return
         elif className_line[0] not in classGroup.keys():
             print("** class doesn't exist **")
-        elif len(cmd_line) == 1:
+        elif len(className_line) == 1:
             print("** instance id missing **")
 
 if __name__ == '__main__':
