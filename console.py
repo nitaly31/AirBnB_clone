@@ -70,6 +70,7 @@ class HBNBCommand(cmd.Cmd):
         if len(className_line) == 0:
             print("** class name missing **")
             return
-
+        elif className_line[0] not in classGroup.keys():
+            print("** class doesn't exist **")
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
