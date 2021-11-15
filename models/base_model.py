@@ -43,7 +43,8 @@ class BaseModel:
     def __str__(self):
         ''' devuelve el nombre de la clase, el ID y
         el diccionario de atributos '''
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        return "[{}] ({}) {}".format(
+            self.__class__.__name__, self.id, self.__dict__)
 
     def save(self):
         ''' actualiza el atributo de instancia pública
