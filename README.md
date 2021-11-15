@@ -74,11 +74,43 @@ Phases of the AirBnB clone project:
 | [`tests/test_models`]() | Folder containing all unit test files in the `models` folder. |
 | [`tests/test_models/test_engine`]() | Folder containing all unit test files in the `engine` subfolder. |
 
+### :computer: Console
+***
+#### Description of the command interpreter :clipboard:
+
+the console contains the entry point of the command interpreter.
+
+### 🛠️ Installation
+***
+1. Clone this repository:
+`https://github.com/nitaly31/AirBnB_clone.git`
+2. Access AirBnb directory:
+`cd AirBnB_clone`
+3. Run hbnb(interactively)
+```bash
+root@c698ec171c6e:/home/AirBnB_clone# ./console
+```
+4. When this command is run the following prompt should appear:
+```bash
+(hbnb)
+```
+5. This prompt designates you are in the "HBnB" console. There are a variety of commands available within the console program.
+
+| Command | Description |
+| --- | --- |
+| `create` | Creates a new instance of `BaseModel`, saves it (to the JSON file) and prints the `id`. |
+| `show` | Prints the string representation of an instance based on the class name and `id`. |
+| `destroy` | Deletes an instance based on the class name and `id` (save the change into the JSON file). |
+| `all` | Prints all string representation of all instances based or not on the class name. |
+| `update` | Updates an instance based on the class name and `id` by adding or updating attribute (save the change into the JSON file). |
+| `quit` and `EOF`| To exit the program. |
+| `help` | Shows the commands that can be used in the console. |
+
 ### 🧪 Testing
 ***
-Your shell should work like this in interactive mode:
+
 ```bash
-$ ./console.py
+root@c698ec171c6e:/home/AirBnB_clone# ./console.py
 (hbnb) help
 
 Documented commands (type help <topic>):
@@ -90,34 +122,31 @@ EOF  help  quit
 (hbnb) quit
 $
 ```
-But also in non-interactive mode:
+
+##### all
 ```bash
-$ echo "help" | ./console.py
-(hbnb)
-
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
+(hbnb) User.all()
+[[User] (246c227a-d5c1-403d-9bc7-6a47bb9f0f68) {'first_name': 'Betty', 'last_name': 'Bar', 'created_at': datetime.datetime(2017, 9, 28, 21, 12, 19, 611352), 'updated_at': datetime.datetime(2017, 9, 28, 21, 12, 19, 611363), 'password': '63a9f0ea7bb98050796b649e85481845', 'email': 'airbnb@mail.com', 'id': '246c227a-d5c1-403d-9bc7-6a47bb9f0f68'}, [User] (38f22813-2753-4d42-b37c-57a17f1e4f88) {'first_name': 'Betty', 'last_name': 'Bar', 'created_at': datetime.datetime(2017, 9, 28, 21, 11, 42, 848279), 'updated_at': datetime.datetime(2017, 9, 28, 21, 11, 42, 848291), 'password': 'b9be11166d72e9e3ae7fd407165e4bd2', 'email': 'airbnb@mail.com', 'id': '38f22813-2753-4d42-b37c-57a17f1e4f88'}]
 (hbnb) 
-$
-$ cat test_help
-help
-$
-$ cat test_help | ./console.py
-(hbnb)
-
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-(hbnb) 
-$
 ```
-All tests should also pass in non-interactive mode:
-`$ echo "python3 -m unittest discover tests" | bash`
 
-### 🛠️ Installation
-***
+##### show
+```bash
+(hbnb) User.show("246c227a-d5c1-403d-9bc7-6a47bb9f0f68")
+[User] (246c227a-d5c1-403d-9bc7-6a47bb9f0f68) {'first_name': 'Betty', 'last_name': 'Bar', 'created_at': datetime.datetime(2017, 9, 28, 21, 12, 19, 611352), 'updated_at': datetime.datetime(2017, 9, 28, 21, 12, 19, 611363), 'password': '63a9f0ea7bb98050796b649e85481845', 'email': 'airbnb@mail.com', 'id': '246c227a-d5c1-403d-9bc7-6a47bb9f0f68'}
+(hbnb) User.show("Bar")
+** no instance found **
+(hbnb) 
+```
 
+#### create
+```bash
+(hbnb) create BaseModel
+49faff9a-6318-451f-87b6-910505c55907
+(hbnb) all BaseModel
+["[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'created_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903293), 'id': '49faff9a-6318-451f-87b6-910505c55907', 'updated_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903300)}"]
+(hbnb)
+```
 
 ### :black_nib: Authors
 ***
