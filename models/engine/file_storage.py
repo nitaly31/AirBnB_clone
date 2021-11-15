@@ -17,7 +17,8 @@ date = {"BaseModel": BaseModel, "User": User, "State": State,
 
 
 class FileStorage:
-    ''' Clase que gestiona el almacenamiento de modelos hbnb en formato JSON '''
+    ''' Clase que gestiona el almacenamiento de modelos
+        hbnb en formato JSON '''
     # cadena: ruta al archivo JSON
     __file_path = "file.json"
     # diccionario - vacío
