@@ -82,5 +82,13 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** no instance found **")
 
+    def help_quit(self):
+        ''' help_quit '''
+        print("Quit command to exit the program\n")
+
+    def help_EOF(self):
+        """help_EOF"""
+        print("End of File command: exit the program\n")
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
