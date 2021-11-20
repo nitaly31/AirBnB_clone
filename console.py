@@ -106,5 +106,7 @@ class HBNBCommand(cmd.Cmd):
             print("[", end="")
             print(", ".join(obj_list), end="")
             print("]")
+        else:
+            print("** class doesn't exist **")
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
