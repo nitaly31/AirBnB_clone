@@ -112,5 +112,7 @@ class HBNBCommand(cmd.Cmd):
         className_line = line.split()
         staticArray = ["id", "created_at", "updated_at"]
         objects = models.storage.all()
+        if not line:
+            print("** class name missing **")
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
