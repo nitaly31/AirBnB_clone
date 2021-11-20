@@ -132,6 +132,8 @@ class HBNBCommand(cmd.Cmd):
                 ojb.__dict__[className_line[2]] = className_line[3]
                 ojb.updated_at = datetime.now()
                 ojb.save()
-
+    def do_count(self, line):
+        "count instances of the class"
+        className_line = line.split()
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
