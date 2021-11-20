@@ -107,5 +107,10 @@ class HBNBCommand(cmd.Cmd):
             print("]")
         else:
             print("** class doesn't exist **")
+    def do_update(self, line):
+        """Update an instance based on the class name, id, attribute & value"""
+        className_line = line.split()
+        staticArray = ["id", "created_at", "updated_at"]
+        objects = models.storage.all()
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
