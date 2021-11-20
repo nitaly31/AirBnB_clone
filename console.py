@@ -5,7 +5,7 @@ Contains the entry point of the command interpreter
 
 import cmd
 import models
-# from datetime import datetime
+from datetime import datetime
 from models.amenity import Amenity
 from models.base_model import BaseModel
 from models.city import City
