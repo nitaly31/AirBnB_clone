@@ -137,5 +137,8 @@ class HBNBCommand(cmd.Cmd):
         className_line = line.split()
         if className_line[0] not in classGroup:
             return
+        else:
+            counter = 0
+            keys_list = models.storage.all().keys()            
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
