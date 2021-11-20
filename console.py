@@ -99,5 +99,12 @@ class HBNBCommand(cmd.Cmd):
             print("[", end="")
             print(", ".join(obj_list), end="")
             print("]")
+        elif className_line[0] in classGroup:
+            for key in models.storage.all():
+                if className_line[0] in key:
+                    obj_list.append(str(models.storage.all()[key]))
+            print("[", end="")
+            print(", ".join(obj_list), end="")
+            print("]")
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
