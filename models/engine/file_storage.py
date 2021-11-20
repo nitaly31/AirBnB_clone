@@ -13,9 +13,12 @@ from models.state import State
 
 
 date = {"BaseModel": BaseModel, "User": User, "State": State,
-           "Place": Place, "City": City, "Amenity": Amenity, "Review": Review}
+        "Place": Place, "City": City, "Amenity": Amenity, "Review": Review}
+
 
 class FileStorage:
+    ''' Clase que gestiona el almacenamiento de modelos
+        hbnb en formato JSON '''
     # cadena: ruta al archivo JSON
     __file_path = "file.json"
     # diccionario - vacío
@@ -43,12 +46,12 @@ class FileStorage:
             for key, value in self.__objects.items():
                 # Asigno el valor al dic_obj en su clave
                 dic_obj[key] = value.to_dict()
-                # Convierte los objetos de Python en objetos json apropiados para
-                # almacenarse en un archivo
+                # Convierte los objetos de Python en objetos json apropiados
+                # para almacenarse en un archivo
             json.dump(dic_obj, f)
 
     def reload(self):
-        ''' 
+        '''
         Deserializa el archivo JSON a __objects
         (solo si el archivo JSON (__file_path) existe; de ​​lo contrario,
         si el archivo no existe, no se debe generar ninguna excepción)
@@ -61,8 +64,9 @@ class FileStorage:
                 j_dic = json.load(f)
             # Se recorre el contenido del archivo deserializado
             for key in j_dic:
+                value = date[j_dic[key]["__class__"]](**j_dic[key])
                 # Establece los nuevos valores del objeto
-                self.__objects[key] = date[j_dic[key]["__class__"]](**j_dic[key])
+                self.__objects[key] = value
         # Se genera cuando se solicita un archivo o directorio pero no existe
         except FileNotFoundError:
             pass
