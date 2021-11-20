@@ -139,6 +139,10 @@ class HBNBCommand(cmd.Cmd):
             return
         else:
             counter = 0
-            keys_list = models.storage.all().keys()            
+            keys_list = models.storage.all().keys()
+            for searchKey in keys_list:
+                len_searchKey = len(className_line[0])
+                if searchKey[:len_searchKey] == className_line[0]:
+                    counter += 1
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
