@@ -135,5 +135,7 @@ class HBNBCommand(cmd.Cmd):
     def do_count(self, line):
         "count instances of the class"
         className_line = line.split()
+        if className_line[0] not in classGroup:
+            return
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
