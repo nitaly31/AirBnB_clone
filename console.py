@@ -93,6 +93,11 @@ class HBNBCommand(cmd.Cmd):
         """Prints string representations of instances"""
         className_line = shlex.split(arg)
         obj_list = []
-
+        if len(className_line) == 0:
+            for value in models.storage.all().values():
+                obj_list.append(str(value))
+            print("[", end="")
+            print(", ".join(obj_list), end="")
+            print("]")
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
