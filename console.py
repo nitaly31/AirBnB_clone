@@ -144,5 +144,6 @@ class HBNBCommand(cmd.Cmd):
                 len_searchKey = len(className_line[0])
                 if searchKey[:len_searchKey] == className_line[0]:
                     counter += 1
+            print(counter)
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
