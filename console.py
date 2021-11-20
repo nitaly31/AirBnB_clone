@@ -114,5 +114,8 @@ class HBNBCommand(cmd.Cmd):
         objects = models.storage.all()
         if not line:
             print("** class name missing **")
+        elif className_line[0] not in classGroup.keys():
+            print("** class doesn't exist **")
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
