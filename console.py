@@ -68,8 +68,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(className_line) == 2:
             instance = className_line[0] + "." + className_line[1]
             if instance in models.storage.all():
-                del models.storage.all()[instance]
-                models.storage.save()
+                print(models.storage.all()[instance])
             else:
                 print("** no instance found **")
     def do_destroy(self, line):
