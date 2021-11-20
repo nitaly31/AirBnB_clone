@@ -122,5 +122,10 @@ class HBNBCommand(cmd.Cmd):
             instance = className_line[0] + "." + className_line[1]
             if instance not in models.storage.all():
                             print("** no instance found **")
+            elif len(className_line) < 3:
+                print("** attribute name missing **")
+
+
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
