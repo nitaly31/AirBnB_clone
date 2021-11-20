@@ -124,7 +124,8 @@ class HBNBCommand(cmd.Cmd):
                             print("** no instance found **")
             elif len(className_line) < 3:
                 print("** attribute name missing **")
-
+            elif len(className_line) < 4:
+                print("** value missing **")
 
 
 if __name__ == '__main__':
