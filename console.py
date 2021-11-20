@@ -5,6 +5,7 @@ Contains the entry point of the command interpreter
 
 import cmd
 import models
+# from datetime import datetime
 from models.amenity import Amenity
 from models.base_model import BaseModel
 from models.city import City
@@ -126,7 +127,11 @@ class HBNBCommand(cmd.Cmd):
                 print("** attribute name missing **")
             elif len(className_line) < 4:
                 print("** value missing **")
-
+            elif className_line[2] not in staticArray:
+                ojb = objects[instance]
+                ojb.__dict__[className_line[2]] = className_line[3]
+                ojb.updated_at = datetime.now()
+                ojb.save()
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
