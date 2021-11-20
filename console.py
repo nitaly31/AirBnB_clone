@@ -81,8 +81,14 @@ class HBNBCommand(cmd.Cmd):
                 models.storage.save()
             else:
                 print("** no instance found **")
-    def do_all(self, line):
-        """Prints string representations of instances"""
-        className_line = line.split()
+
+    def help_quit(self):
+        ''' help_quit '''
+        print("Quit command to exit the program\n")
+
+    def help_EOF(self):
+        """help_EOF"""
+        print("End of File command: exit the program\n")
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
