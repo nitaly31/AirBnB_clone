@@ -118,5 +118,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         elif len(className_line) == 1:
             print("** instance id missing **")
+        else:
+            instance = className_line[0] + "." + className_line[1]
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
