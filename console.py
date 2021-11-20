@@ -12,6 +12,7 @@ from models.place import Place
 from models.review import Review
 from models.state import State
 from models.user import User
+import shlex
 
 classGroup = {"Amenity": Amenity, "BaseModel": BaseModel, "City": City,
            "Place": Place, "Review": Review, "State": State, "User": User}
@@ -47,6 +48,13 @@ class HBNBCommand(cmd.Cmd):
             instance.save()
         except:
             print("** class doesn't exist **")
+    def help_quit(self):
+        ''' help_quit '''
+        print("Quit command to exit the program\n")
+
+    def help_EOF(self):
+        """help_EOF"""
+        print("End of File command: exit the program\n")
     def do_show(self, line):
         """Prints an instance as a string based on the class and id"""    
         className_line = line.split()
@@ -81,14 +89,10 @@ class HBNBCommand(cmd.Cmd):
                 models.storage.save()
             else:
                 print("** no instance found **")
-
-    def help_quit(self):
-        ''' help_quit '''
-        print("Quit command to exit the program\n")
-
-    def help_EOF(self):
-        """help_EOF"""
-        print("End of File command: exit the program\n")
+    def do_all(self, arg):
+        """Prints string representations of instances"""
+        className_line = shlex.split(arg)
+        obj_list = []
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
