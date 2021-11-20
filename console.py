@@ -120,5 +120,7 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
         else:
             instance = className_line[0] + "." + className_line[1]
+            if instance not in models.storage.all():
+                            print("** no instance found **")
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
