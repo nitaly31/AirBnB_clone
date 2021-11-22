@@ -63,7 +63,7 @@ Phases of the AirBnB clone project:
 * All your CSS files should be in `styles` folder.
 * All your images should be in `images` folder.
 * You are not allowed to use `!important` and `id` (`#...` in the CSS file).
-You are not allowed to use tags `img`, `embed` and `iframe`.
+* You are not allowed to use tags `img`, `embed` and `iframe`.
 * You are not allowed to use Javascript.
 * No cross browsers.
 
