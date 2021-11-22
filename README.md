@@ -10,7 +10,7 @@ The first stage of the project was where we started to create The AirBnB Clone a
 
 This first stage of the project focused on everything related to Python:
 
-`Import`,` Exceptions`, `Class`, `Private attribute`, `Getter / Setter`, `Class method`, `Static method`, `Inheritance`, `Unittest`, `Read / Write file`, `args `and` kwargs`, `Serialization` / `Deserialization` and `JSON`.
+`Import`,` Exceptions`, `Class`, `Private attribute`, `Getter / Setter`, `Class method`, `Static method`, `Inheritance`, `Unittest`, `Read / Write file`, `args` and `kwargs`, `Serialization` / `Deserialization` and `JSON`.
 
 Now that you have a command interpreter for managing your AirBnB objects, it’s time to make them alive!
 
@@ -24,18 +24,21 @@ The first step is to “design” / “sketch” / “prototype” each element:
 * No data loaded from anything
 
 __*HTML*__ (HyperText Markup Language)
-Provide structure and meaning to content by defining that content, such as headings, paragraphs, or images. Es the structure of your page, it should be the first thing to write. 
+
+Provide structure and meaning to content by defining that content, such as headings, paragraphs, or images. Es the structure of your page, it should be the first thing to write.
+
 __*CSS*__ (Cascading Style Sheets)
-It is a presentation language created to style the appearance of content, using, for example, fonts or colors.Is the styling of your page, the design.
+
+It is a presentation language created to style the appearance of content, using, for example, fonts or colors. Is the styling of your page, the design.
 
 Phases of the AirBnB clone project:
-1. ~~The console~~
-2. **HTML**
-3. MySQL
-4. Fabric
-5. Flask
-6. REST API
-7. Web dynamic
+- [x] **The console**
+- [x] **HTML**
+- [ ] MySQL
+- [ ] Fabric
+- [ ] Flask
+- [ ] REST API
+- [ ] Web dynamic
 
 ### 📋 Requirements
 ***
@@ -101,9 +104,9 @@ You are not allowed to use tags `img`, `embed` and `iframe`.
 | [`tests/`](https://github.com/nitaly31/AirBnB_clone/tree/master/tests) | Folder that contains all unittests to validate all our classes and storage engine. |
 | [`tests/test_models`](https://github.com/nitaly31/AirBnB_clone/tree/master/tests/test_models) | Folder containing all unit test files in the `models` folder. |
 | [`tests/test_models/test_engine`](https://github.com/nitaly31/AirBnB_clone/tree/master/tests/test_models/test_engine) | Folder containing all unit test files in the `engine` subfolder. |
-| [web_static/](https://github.com/nitaly31/AirBnB_clone/tree/master/web_static) | Contains the main HTML files for the structure of a static page. |
-| [web_static/images/](https://github.com/nitaly31/AirBnB_clone/tree/master/web_static/images) | Contains the images used in the page or repository. |
-| [web_static/styles/](https://github.com/nitaly31/AirBnB_clone/tree/master/web_static/styles) | Contains the CSS files for the manipulation of styles on the page. |
+| [`web_static/`](https://github.com/nitaly31/AirBnB_clone/tree/master/web_static) | Contains the main HTML files for the structure of a static page. |
+| [`web_static/images/`](https://github.com/nitaly31/AirBnB_clone/tree/master/web_static/images) | Contains the images used in the page or repository. |
+| [`web_static/styles/`](https://github.com/nitaly31/AirBnB_clone/tree/master/web_static/styles) | Contains the CSS files for the manipulation of styles on the page. |
 
 ### :computer: Console
 ***
@@ -183,6 +186,6 @@ $
 ***
 *Holberton School Students*
 
-Yuri Quezada - [Github](https://github.com/yuriquezada) | [Linkedin](https://www.linkedin.com/in/yuriquezada/)
+Yuri Quezada - [Github](https://github.com/yuriquezada) | [LinkedIn](https://www.linkedin.com/in/yuriquezada/)
 
-Geraldine Meneses - [Github](https://github.com/nitaly31) | [Linkedin](https://www.linkedin.com/in/geraldine-meneses/)
+Geraldine Meneses - [Github](https://github.com/nitaly31) | [LinkedIn](https://www.linkedin.com/in/geraldine-meneses/)
