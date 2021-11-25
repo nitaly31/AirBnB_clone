@@ -3,10 +3,8 @@ footer {
     height: 60px;
     width: 100%;
     border-top: 1px solid #CCCCCC;
-    bottom: 0px;
+    bottom: 0;
     position: absolute;
-}
-footer p {
+    display: grid;
     text-align: center;
-    margin: 20px
 }
